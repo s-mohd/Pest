@@ -122,13 +122,16 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+#       "*": {
+#               "on_update": "method",
+#               "on_cancel": "method",
+#               "on_trash": "method"
+#       }
+    'Patient Appointment':{
+        "on_update": "pest.api.methods.get_appointments"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -227,3 +230,5 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]
